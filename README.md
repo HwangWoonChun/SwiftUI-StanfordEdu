@@ -7,4 +7,4 @@
 > 조금 천천히 꼼꼼히 볼 예정
 
 ## Contents
-* [1강 Getting startec with SwiftUI](https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/Rect)
+* [1강 Getting startec with SwiftUI](https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/blob/main/Rect/Rect01.md)

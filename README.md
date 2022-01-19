@@ -1,6 +1,6 @@
 # SwiftUI-StanfordEdu
 * [SwfitUI 스탠포드 대학 강의 자료](https://www.youtube.com/channel/UC-EnprmCZ3OXyAoG7vjVNCA)
-* 유투브 최초공개 일시 2021. 05. 18 참조
+* 최초공개 일시 2021. 05. 18 참조
 
 # SwiftUI 
 

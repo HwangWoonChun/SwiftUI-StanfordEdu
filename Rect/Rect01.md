@@ -57,3 +57,16 @@ SwiftUIRect Recture
         * body 는 여러 뷰들을 조립하는 역할을 한다. body 는 함수를 실행하여 동작하는 변수이다. 위 코드 처럼 텍스트를 반환하고 화면에 노출 시킨다.
         * some View 는 컴파일러에게 body가 뷰의 일부분이다 라고 알려주는 역할을 한다. 실제로 var body: Text 로 컴파일러는 코드를 변환 시킬 것 이다. 쉽게 말해 타입을 컴파일러로 하여금 빠르게 추론 할 수 있게 하는 키워드 이다.(Swift 5.1 새로운 기능)
         * some View를 사용하지 않으면 어떤 타입의 뷰가 반환되는지 일일이 지정해줘야 한다.
+
+5. 배경색 설정
+
+    ``` swift 
+    import SwiftUI
+    struct ContentView: View {
+        var body: some View {
+            Text("").padding()
+                .foregroundColor(.red)
+        }
+    }
+    ```
+      * 생각해볼만한 코드 : forgroundColor에는 레이블을 생략했는데 forgroundColor(color: .red) 컬러 컬러 중복으로 지저분한 코드가 될 수 있기 때문이다.

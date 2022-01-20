@@ -36,15 +36,15 @@ SwiftUIRect Recture
       * @main : 앱이 실행될때 시작하는 메인 c 모듈인 main.c 를 의미한다.
       * WindowGroup : 메인이 되는 화면영역이 어딘지 설정
 
-  * ContentView.swift
-      ``` swift 
-      import SwiftUI
-      struct ContentView: View {
-          var body: some View {
-              return Text("")
-          }
-      }
-      ```
+    * ContentView.swift
+        ``` swift 
+        import SwiftUI
+        struct ContentView: View {
+            var body: some View {
+                return Text("")
+            }
+        }
+        ```
     * ContentView는 구조체 일텐데 View를 상속하네?
       * 이는 프로토콜이며 ContentView 야 View 처럼 동작하렴 이라는 의미 이다.
       * View 처럼 동작한다고 했으니 View의 대부분을 사용 하지만 약간의 책임이 따른다. body라는 변수를 꼭 써야되는 것이다.

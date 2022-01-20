@@ -45,15 +45,15 @@ SwiftUIRect Recture
             }
         }
         ```
-    * ContentView는 구조체 일텐데 View를 상속하네?
-      * 이는 프로토콜이며 ContentView 야 View 처럼 동작하렴 이라는 의미 이다.
-      * View 처럼 동작한다고 했으니 View의 대부분을 사용 하지만 약간의 책임이 따른다. body라는 변수를 꼭 써야되는 것이다.
-   
-    * View 처럼 동작해라
-      * ContentView는 디바이스에 표현되는 직사각형 영역이다.(뷰컨트롤러의 view 처럼) View 는 이 ContentView안에서 표현되는 모든 것들이 View가 될 수 있다.
-      * 함수형 프로그래밍이 지원하는 여러 modifier를 통해 ContentView를 구축 해 나갈 것 이다.
+      * ContentView는 구조체 일텐데 View를 상속하네?
+        * 이는 프로토콜이며 ContentView 야 View 처럼 동작하렴 이라는 의미 이다.
+        * View 처럼 동작한다고 했으니 View의 대부분을 사용 하지만 약간의 책임이 따른다. body라는 변수를 꼭 써야되는 것이다.
 
-    * body: some View
-      * body 는 여러 뷰들을 조립하는 역할을 한다. body 는 함수를 실행하여 동작하는 변수이다. 위 코드 처럼 텍스트를 반환하고 화면에 노출 시킨다.
-      * some View 는 컴파일러에게 body가 뷰의 일부분이다 라고 알려주는 역할을 한다. 실제로 var body: Text 로 컴파일러는 코드를 변환 시킬 것 이다.
-      * some View를 사용하지 않으면 어떤 타입의 뷰가 반환되는지 일일이 지정해줘야 한다.
+      * View 처럼 동작해라
+        * ContentView는 디바이스에 표현되는 직사각형 영역이다.(뷰컨트롤러의 view 처럼) View 는 이 ContentView안에서 표현되는 모든 것들이 View가 될 수 있다.
+        * 함수형 프로그래밍이 지원하는 여러 modifier를 통해 ContentView를 구축 해 나갈 것 이다.
+
+      * body: some View
+        * body 는 여러 뷰들을 조립하는 역할을 한다. body 는 함수를 실행하여 동작하는 변수이다. 위 코드 처럼 텍스트를 반환하고 화면에 노출 시킨다.
+        * some View 는 컴파일러에게 body가 뷰의 일부분이다 라고 알려주는 역할을 한다. 실제로 var body: Text 로 컴파일러는 코드를 변환 시킬 것 이다.
+        * some View를 사용하지 않으면 어떤 타입의 뷰가 반환되는지 일일이 지정해줘야 한다.

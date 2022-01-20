@@ -19,18 +19,18 @@ SwiftUIRect Recture
 4. 프로젝트 살펴보기
    * App.swift
 
-    ``` swift 
-    import SwiftUI
+        ``` swift 
+        import SwiftUI
 
-    @main
-    struct MemorizeApp: App {
-        var body: some Scene {
-            WindowGroup {
-                ContentView()
+        @main
+        struct MemorizeApp: App {
+            var body: some Scene {
+                WindowGroup {
+                    ContentView()
+                }
             }
         }
-    }
-    ```
+        ```
     * 많이 사용하지는 않는다.
     * 주요깊게 봐야되는 부분
       * @main : 앱이 실행될때 시작하는 메인 c 모듈인 main.c 를 의미한다.

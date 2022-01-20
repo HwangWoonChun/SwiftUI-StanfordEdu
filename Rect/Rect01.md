@@ -36,7 +36,7 @@ SwiftUIRect Recture
       * @main : 앱이 실행될때 시작하는 메인 c 모듈인 main.c 를 의미한다.
       * WindowGroup : 메인이 되는 화면영역이 어딘지 설정
 
-* ContentView.swift
-``` swift 
+  * ContentView.swift
+  ``` swift 
 
-```
+  ```

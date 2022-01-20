@@ -17,7 +17,7 @@ SwiftUIRect Recture
 3. 프리뷰
     * 실시간 코드를 반영하여 확인 할 수 있는 시스템
 
-4. 프로젝트 살펴보기
+4. 기본 프로젝트 살펴보기
    * App.swift
         ``` swift 
         import SwiftUI
@@ -70,3 +70,40 @@ SwiftUIRect Recture
     }
     ```
       * 생각해볼만한 코드 : forgroundColor에는 레이블을 생략했는데 forgroundColor(color: .red) 컬러 컬러 중복으로 지저분한 코드가 될 수 있기 때문이다.
+
+6. 사각형 뷰에 보더
+
+    ``` swift 
+    struct ContentView: View {
+        var body: some View {
+            RoundedRectangle(cornerRadius: 20)
+                .stroke()
+                .padding(.horizontal)
+        }
+    }
+    ```
+      * 생각해볼만한 코드 : forgroundColor에는 레이블을 생략했는데 forgroundColor(color: .red) 컬러 컬러 중복으로 지저분한 코드가 될 수 있기 때문이다.
+
+7. ZStack : 뷰들을 층층히 쌓아 올리는 구조
+    ``` swift 
+    struct ContentView: View {
+        //타입을 Zstack으로 바꿔도 컴파일러 에러 : 스택안에 복잡한 화면들이 구성되어있기 때문에 some View
+        var body: some View {
+            //뷰들을 층층히 쌓아 결합하는 구조체
+            ZStack(content: {
+                //
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(lineWidth: 3)
+                    .padding(.horizontal)
+                    .foregroundColor(.red)
+                //
+                Text("Hello Word")
+                    .foregroundColor(.yellow)
+                    .padding()
+            })
+        }
+    }
+    ```
+      * ZStack에도 Padding을 줄 수 있으며 ZStack 에 색상등을 변경하면 안의 내용물 색상도 변경이 된다. 최상위 수준에서 설정 할지 내부에서 할지 고려하여 개발 해야 한다,.
+
+      * ZStack의 content 는 뷰빌더라는 녀석인데 간단히 말해 클로저 안에다가 서브 뷰들을 구성한다는 개념이다.

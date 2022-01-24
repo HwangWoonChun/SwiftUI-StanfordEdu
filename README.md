@@ -8,3 +8,4 @@
 
 ## Contents
 * [1강 Getting startec with SwiftUI](https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/blob/main/Rect/Rect01.md)
+* [2강 Learning more about SwiftUI](https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/blob/main/Rect/Rect02.md)

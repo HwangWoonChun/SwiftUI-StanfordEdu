@@ -81,3 +81,4 @@ SwiftUIRect Recture
         }
     }
     ```
+    * 하나의 RoundRectangle를 이용해 처리를 하는것이 아니라 RoundRectangle을 두개 생성 하는 방식이다.

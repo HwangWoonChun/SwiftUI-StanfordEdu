@@ -108,3 +108,144 @@ SwiftUIRect Recture
     * 구조체는 기본적으로 self 가 immutable이다. SwiftUI 에선 이를 가변화 하기위해 @State 키워드를 사용한다.
     * A property wrapper type that can read and write a value managed by SwiftUI.
         * cf) wrapper Type : primitive type 의 데이터를 객체화 하기위한 포장 해주는 클래스
+
+5.  외부에서 초기화 하도록 변경
+
+    ``` swift 
+    struct ContentView: View {
+
+        var body: some View {
+            HStack {
+                CardView(content: 🦼)
+                CardView(content: 🛴)
+                CardView(content: 🚠)
+                CardView(content: 🛰)
+            }
+            .padding(.horizontal)
+            .foregroundColor(.red)
+        }
+    }
+
+    struct CardView: View {
+        var content: String
+        @State var isFaceUp: Bool = false
+        var body: some View {
+            ZStack {
+                let shape = RoundedRectangle(cornerRadius: 20)
+                if isFaceUp {
+                    shape.fill().foregroundColor(.white)
+                    shape.stroke(lineWidth: 3)
+                    Text(content).font(.largeTitle)
+                } else {
+                    shape.fill()
+                }
+            }
+            .onTapGesture {
+                isFaceUp = !isFaceUp
+            }
+        }
+    }
+    ```
+    
+6.  for-Loop 이용 초기화 - forEach
+
+    ``` swift 
+    struct ContentView: View {
+        let emjois = ["🛴", "🚠", "🚨"]
+        var body: some View {
+            HStack {
+                ForEach(emjois, id: \.self, content: { item in
+                    CardView(content: item)
+                })
+            }
+            .padding(.horizontal)
+            .foregroundColor(.red)
+        }
+    }
+    ```
+    
+    * forEach 는 identifier 를 지정하여 특정 뷰들이 구분되어 질 수 있도록 해야한다.
+    * \.self 는 데이터의 identfier 를 알아서 참조하도록 해준다.
+
+7. 추가 삭제 기능
+
+<img src = "https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/blob/main/Img/Simulator%20Screen%20Shot%20-%20iPod%20touch%20(7th%20generation)%20-%202022-01-25%20at%2013.59.15.png" width = 160 height = 240>
+
+    ``` swift 
+    struct ContentView: View {
+
+        let emjois = ["🚗","🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🦯", "🦽", "🦼", "🛴", "🚲", "🛵", "🏍", "🛺"]
+
+        @State var emojiCount = 4
+
+        var body: some View {
+            VStack {
+                HStack {
+                    ForEach(emjois[0..<emojiCount], id: \.self, content: { item in
+                        CardView(content: item)
+                    })
+                }
+                Spacer()
+                HStack {
+                    add
+                    Spacer()
+                    remove
+                }
+                .padding(.horizontal)
+            }
+            .padding(.horizontal)
+            .foregroundColor(.red)
+        }
+
+        var remove: some View {
+            Button {
+                if emojiCount > 1 {
+                    emojiCount -= 1
+                }
+            } label: {
+                VStack {
+                    Image(systemName: "minus.circle")
+                }
+            }
+        }
+
+        var add: some View {
+            Button {
+                if emojiCount < emjois.count {
+                    emojiCount += 1
+                }
+            } label: {
+                VStack {
+                    Image(systemName: "plus.circle")
+                }
+            }
+        }
+    }
+
+    struct CardView: View {
+        var content: String
+        @State var isFaceUp: Bool = false
+        var body: some View {
+            ZStack {
+                let shape = RoundedRectangle(cornerRadius: 20)
+                if isFaceUp {
+                    shape.fill().foregroundColor(.white)
+                    shape.stroke(lineWidth: 3)
+                    Text(content).font(.largeTitle)
+                } else {
+                    shape.fill()
+                }
+            }
+            .onTapGesture {
+                isFaceUp = !isFaceUp
+            }
+        }
+    }
+    ```
+
+8. Stroke vs Stroke Border
+    * stroke - 보더를 뷰 밖에 그림
+        <img src = "https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/blob/main/Img/Simulator%20Screen%20Shot%20-%20iPod%20touch%20(7th%20generation)%20-%202022-01-25%20at%2014.02.53.png" width = 160 height = 240>
+
+    * stroke border - 보더를 뷰 안에 그림
+        <img src = "https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/blob/main/Img/Simulator%20Screen%20Shot%20-%20iPod%20touch%20(7th%20generation)%20-%202022-01-25%20at%2014.02.37.png" width = 160 height = 240>

@@ -273,6 +273,10 @@ SwiftUIRect Recture
         
     * 예제
 
+        * <img src = "https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/blob/main/Img/Simulator%20Screen%20Shot%20-%20iPod%20touch%20(7th%20generation)%20-%202022-01-25%20at%2014.10.11.png"  width = 240 height = 160>
+        
+        * <img src = "https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/blob/main/Img/Simulator%20Screen%20Shot%20-%20iPod%20touch%20(7th%20generation)%20-%202022-01-25%20at%2014.10.05.png"  width = 160 height = 240>
+
         ``` swift 
         struct ContentView: View {
 

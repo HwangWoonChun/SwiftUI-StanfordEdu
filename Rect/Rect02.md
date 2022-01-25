@@ -66,4 +66,18 @@ SwiftUIRect Recture
     }
     ```
 
-3. 맛보기 - 카드에 
+3. 다크 모드 고려 카드에 배경색 지정
+
+    <img src = "https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/blob/main/Img/Simulator%20Screen%20Shot%20-%20iPod%20touch%20(7th%20generation)%20-%202022-01-25%20at%2011.04.44.png" width = 160 height = 240>
+    
+    ``` swift 
+    struct CardView: View {
+        var body: some View {
+            ZStack(content: {
+                RoundedRectangle(cornerRadius: 20).fill().foregroundColor(.white)
+                RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 3)
+                Text("🏗").font(.largeTitle)
+            })
+        }
+    }
+    ```

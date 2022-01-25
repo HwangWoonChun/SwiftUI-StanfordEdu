@@ -249,3 +249,101 @@ SwiftUIRect Recture
 
     * stroke border - 보더를 뷰 안에 그림
         * <img src = "https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/blob/main/Img/Simulator%20Screen%20Shot%20-%20iPod%20touch%20(7th%20generation)%20-%202022-01-25%20at%2014.02.37.png" width = 160 height = 240>
+
+9. LazyVGrid 를 통해 격자 모형으로 리스트 구현
+
+    * 3열만 보이기
+        ``` swift 
+        LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) { }
+        ```
+    * minimum 값 이상의 사이즈로 열마다 가능한 많이 아이템을 배치
+        ``` swift 
+        GridItem(.adaptive())
+        ```
+        
+    * minimum 값 이상의 사이즈로 열마다 컬럼 수를 조절
+        ``` swift 
+        GridItem(.flexible())
+        ```
+            
+    * 컬럼수와 크기 직접 조절
+        ``` swift 
+        GridItem(.fixed())
+        ```
+        
+    * 예제
+
+        ``` swift 
+        struct ContentView: View {
+
+            let emjois = ["🚗","🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🦯", "🦽", "🦼", "🛴", "🚲", "🛵", "🏍", "🛺", "🚚", "🚛", "🚜", "🦯", "🦽", "🦼", "🛴", "🚲", "🛵", "🏍", "🛺"]
+
+            @State var emojiCount = 20
+
+            var body: some View {
+                VStack {
+                    ScrollView {
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
+                            ForEach(emjois[0..<emojiCount], id: \.self, content: { item in
+                                CardView(content: item).aspectRatio(2/3, contentMode: .fit)
+                            })
+                        }
+                    }
+                    .foregroundColor(.red)
+                    Spacer()
+                    HStack {
+                        add
+                        Spacer()
+                        remove
+                    }
+                    .padding(.horizontal)
+                }
+                .padding(.horizontal)
+
+            }
+
+            var remove: some View {
+                Button {
+                    if emojiCount > 1 {
+                        emojiCount -= 1
+                    }
+                } label: {
+                    VStack {
+                        Image(systemName: "minus.circle")
+                    }
+                }
+            }
+
+            var add: some View {
+                Button {
+                    if emojiCount < emjois.count {
+                        emojiCount += 1
+                    }
+                } label: {
+                    VStack {
+                        Image(systemName: "plus.circle")
+                    }
+                }
+            }
+        }
+
+        struct CardView: View {
+            var content: String
+            @State var isFaceUp: Bool = false
+            var body: some View {
+                ZStack {
+                    let shape = RoundedRectangle(cornerRadius: 20)
+                    if isFaceUp {
+                        shape.fill().foregroundColor(.white)
+                        shape.strokeBorder()
+                        Text(content).font(.largeTitle)
+                    } else {
+                        shape.fill()
+                    }
+                }
+                .onTapGesture {
+                    isFaceUp = !isFaceUp
+                }
+            }
+        }
+        ```    

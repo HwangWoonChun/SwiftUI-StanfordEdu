@@ -245,7 +245,7 @@ SwiftUIRect Recture
 
 8. Stroke vs Stroke Border
     * stroke - 보더를 뷰 밖에 그림
-        <img src = "https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/blob/main/Img/Simulator%20Screen%20Shot%20-%20iPod%20touch%20(7th%20generation)%20-%202022-01-25%20at%2014.02.53.png" width = 160 height = 240>
+        * <img src = "https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/blob/main/Img/Simulator%20Screen%20Shot%20-%20iPod%20touch%20(7th%20generation)%20-%202022-01-25%20at%2014.02.53.png" width = 160 height = 240>
 
     * stroke border - 보더를 뷰 안에 그림
-        <img src = "https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/blob/main/Img/Simulator%20Screen%20Shot%20-%20iPod%20touch%20(7th%20generation)%20-%202022-01-25%20at%2014.02.37.png" width = 160 height = 240>
+        * <img src = "https://github.com/HwangWoonChun/SwiftUI-StanfordEdu/blob/main/Img/Simulator%20Screen%20Shot%20-%20iPod%20touch%20(7th%20generation)%20-%202022-01-25%20at%2014.02.37.png" width = 160 height = 240>
